@@ -1,0 +1,5 @@
+#!/bin/bash
+ts=`date +%s`
+ffmpeg -f video4linux2 -s vga -i /dev/video0 -vframes 1 /home/ankit/Documents/WizAuth/failimg.jpg
+/usr/bin/python3 /home/ankit/Documents/sendm.py >> ~/cron.log 2>&1
+exit 0  #important - has to exit with status 0
